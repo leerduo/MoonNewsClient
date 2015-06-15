@@ -3,3 +3,6 @@ XUtils模块：
 2.ViewUtils模块
 3.HttpUtils模块
 4.BitmapUtils模块
+2015-06-15晚上：
+测试HttpUtils模块的时候，出现下面的错误：
+RetryHandler.retryRequest(L:91)﹕ retry error, curr request is null

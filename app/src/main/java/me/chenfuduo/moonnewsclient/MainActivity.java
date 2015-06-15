@@ -7,8 +7,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lidroid.xutils.DbUtils;
+import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.db.sqlite.Selector;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.ArrayList;
@@ -42,6 +47,41 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnViewUtils)
     public void show(View v) {
         Toast.makeText(MainActivity.this, "ViewUtils测试", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * HttpUtils演示
+     *
+     * @param v
+     */
+    @OnClick(R.id.btnHttpUtils)
+    public void get(View v) {
+        Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+
+        HttpUtils http = new HttpUtils();
+        http.send(HttpRequest.HttpMethod.GET,
+                "http://www.lidroid.com",
+                new RequestCallBack<String>() {
+                    @Override
+                    public void onLoading(long total, long current, boolean isUploading) {
+                        Log.e("Test", "Total-->" + total + "  current--->" + current);
+                    }
+
+                    @Override
+                    public void onSuccess(ResponseInfo<String> responseInfo) {
+                        String result = responseInfo.result;
+                        Log.e("TEST", result);
+                    }
+
+                    @Override
+                    public void onStart() {
+                    }
+
+                    @Override
+                    public void onFailure(HttpException error, String msg) {
+                        Log.e("TEST", "失败");
+                    }
+                });
     }
 
 
