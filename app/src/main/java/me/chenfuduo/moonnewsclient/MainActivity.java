@@ -58,17 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public void showImg(View view){
         BitmapUtils bitmapUtils = new BitmapUtils(this);
         String url = "https://www.baidu.com/img/bd_logo1.png";
-        bitmapUtils.display(img, url, new BitmapLoadCallBack<ImageView>() {
-            @Override
-            public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
-
-            }
-
-            @Override
-            public void onLoadFailed(ImageView imageView, String s, Drawable drawable) {
-                Log.e("Test","加载图片失败");
-            }
-        });
+        bitmapUtils.display(img, url);
     }
 
 
