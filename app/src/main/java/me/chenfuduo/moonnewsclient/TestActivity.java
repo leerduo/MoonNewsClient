@@ -1,11 +1,10 @@
 package me.chenfuduo.moonnewsclient;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -13,9 +12,6 @@ import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
-import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
-import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
 import com.lidroid.xutils.db.sqlite.Selector;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
@@ -29,7 +25,7 @@ import java.util.List;
 
 import me.chenfuduo.moonnewsclient.domain.Student;
 
-public class MainActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity {
 
   /*  @ViewInject(R.id.btnViewUtils)
     private Button btnViewUtils;*/
@@ -40,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_test);
         ViewUtils.inject(this);
        /* btnViewUtils.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @OnClick(R.id.btnViewUtils)
     public void show(View v) {
-        Toast.makeText(MainActivity.this, "ViewUtils测试", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TestActivity.this, "ViewUtils测试", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -80,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @OnClick(R.id.btnHttpUtils)
     public void get(View v) {
-        Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TestActivity.this, "点击了", Toast.LENGTH_SHORT).show();
 
         HttpUtils http = new HttpUtils();
         http.send(HttpRequest.HttpMethod.GET,
