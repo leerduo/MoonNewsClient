@@ -1,19 +1,27 @@
 package me.chenfuduo.moonnewsclient;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
+import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
+import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
 import com.lidroid.xutils.db.sqlite.Selector;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.ArrayList;
@@ -25,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
   /*  @ViewInject(R.id.btnViewUtils)
     private Button btnViewUtils;*/
+
+    @ViewInject(R.id.img)
+    private ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
     }
+
+    /**
+     * BitmapUtils的演示
+     * @param view
+     */
+    @OnClick(R.id.btnBitmapUtils)
+    public void showImg(View view){
+        BitmapUtils bitmapUtils = new BitmapUtils(this);
+        String url = "https://www.baidu.com/img/bd_logo1.png";
+        bitmapUtils.display(img, url, new BitmapLoadCallBack<ImageView>() {
+            @Override
+            public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
+
+            }
+
+            @Override
+            public void onLoadFailed(ImageView imageView, String s, Drawable drawable) {
+                Log.e("Test","加载图片失败");
+            }
+        });
+    }
+
+
 
     /**
      * ViewUtils测试

@@ -9,6 +9,19 @@
 
 
         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBitmapUtils"
+            android:text="BitmapUtils演示"
+            />
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/img"
+            />
+
+        <Button
             android:id="@+id/btnHttpUtils"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
