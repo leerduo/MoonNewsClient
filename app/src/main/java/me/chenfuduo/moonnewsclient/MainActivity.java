@@ -1,15 +1,15 @@
 package me.chenfuduo.moonnewsclient;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.lidroid.xutils.DbUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.db.sqlite.Selector;
-import com.lidroid.xutils.db.sqlite.WhereBuilder;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +18,32 @@ import me.chenfuduo.moonnewsclient.domain.Student;
 
 public class MainActivity extends AppCompatActivity {
 
+  /*  @ViewInject(R.id.btnViewUtils)
+    private Button btnViewUtils;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ViewUtils.inject(this);
+       /* btnViewUtils.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"ViewUtils测试",Toast.LENGTH_SHORT).show();
+            }
+        });*/
     }
+
+    /**
+     * ViewUtils测试
+     *
+     * @param v
+     */
+    @OnClick(R.id.btnViewUtils)
+    public void show(View v) {
+        Toast.makeText(MainActivity.this, "ViewUtils测试", Toast.LENGTH_SHORT).show();
+    }
+
 
     /**
      * 保存单个对象
@@ -131,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             //创建数据库
             DbUtils dbUtils = DbUtils.create(this, "test.db");
-            Student student = new Student(1,"duoduo",25);
-            dbUtils.update(student, new String[]{"name","age"});
+            Student student = new Student(1, "duoduo", 25);
+            dbUtils.update(student, new String[]{"name", "age"});
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("Test", "创建失败");
@@ -148,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             //创建数据库
             DbUtils dbUtils = DbUtils.create(this, "test.db");
-            dbUtils.deleteById(Student.class,3);
+            dbUtils.deleteById(Student.class, 3);
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("Test", "创建失败");
