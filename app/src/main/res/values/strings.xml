@@ -6,4 +6,5 @@
     <string name="title_activity_test02">TestActivity02</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="title_activity_test03">TestActivity03</string>
 </resources>
