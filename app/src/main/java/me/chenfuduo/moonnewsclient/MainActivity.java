@@ -4,6 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.lidroid.xutils.DbUtils;
+
+import me.chenfuduo.moonnewsclient.domain.Student;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,25 +18,67 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    /**
+     * 保存单个对象
+     * @param view view对象
+     */
+    public void button(View view){
+        try {
+            //创建数据库
+            DbUtils dbUtils = DbUtils.create(this, "test.db");
+            //创建表
+            dbUtils.createTableIfNotExist(Student.class);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * 保存对象集合
+     * @param view view对象
+     */
+    public void button2(View view){
+
+    }
+
+    /**
+     * 查询所有
+     * @param view view对象
+     */
+    public void button3(View view){
+
+    }
+
+    /**
+     * 根据id查询
+     * @param view view对象
+     */
+    public void button4(View view){
+
+    }
+
+    /**
+     * 根据其他条件查询
+     * @param view view对象
+     */
+    public void button5(View view){
+
+    }
+
+    /**
+     * 更新
+     * @param view view对象
+     */
+    public void button6(View view){
+
+    }
+
+    /**
+     * 删除
+     * @param view view对象
+     */
+    public void button7(View view){
+
+    }
+
 }
