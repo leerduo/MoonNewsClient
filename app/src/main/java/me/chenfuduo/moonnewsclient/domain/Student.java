@@ -18,6 +18,11 @@ public class Student {
 
     public int age;
 
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     //如果使用XUtils框架，必须一个无参数的构造器
     //里面的属性最好加上geter/setter方法
     public Student() {
