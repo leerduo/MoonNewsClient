@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient;
+package me.chenfuduo.moonnewsclient.test;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.chenfuduo.moonnewsclient.domain.Student;
+import me.chenfuduo.moonnewsclient.R;
 
 public class TestActivity extends AppCompatActivity {
 

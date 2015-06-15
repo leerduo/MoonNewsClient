@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient;
+package me.chenfuduo.moonnewsclient.test;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,7 @@ import android.util.TypedValue;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
+import me.chenfuduo.moonnewsclient.R;
 import me.chenfuduo.moonnewsclient.utils.WechatTab;
 
 public class TestActivity04 extends AppCompatActivity {

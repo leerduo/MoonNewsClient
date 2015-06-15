@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient;
+package me.chenfuduo.moonnewsclient.test;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

@@ -8,4 +8,7 @@
     <string name="close">close</string>
     <string name="title_activity_test03">TestActivity03</string>
     <string name="title_activity_test04">TestActivity04</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

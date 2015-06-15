@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient;
+package me.chenfuduo.moonnewsclient.test;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import me.chenfuduo.moonnewsclient.R;
 
 
 public class TestActivity02 extends Activity {

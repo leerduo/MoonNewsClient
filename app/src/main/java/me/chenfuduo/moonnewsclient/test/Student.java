@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient.domain;
+package me.chenfuduo.moonnewsclient.test;
 
 import com.lidroid.xutils.db.annotation.Id;
 import com.lidroid.xutils.db.annotation.Table;

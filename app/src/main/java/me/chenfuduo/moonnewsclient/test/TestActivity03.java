@@ -1,4 +1,4 @@
-package me.chenfuduo.moonnewsclient;
+package me.chenfuduo.moonnewsclient.test;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 
+import me.chenfuduo.moonnewsclient.R;
 import me.chenfuduo.moonnewsclient.domain.CategoryInfo;
 
 public class TestActivity03 extends AppCompatActivity {
